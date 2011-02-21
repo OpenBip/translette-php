@@ -1,0 +1,46 @@
+<div>
+
+  <div dojoType="dijit.layout.BorderContainer" design="headline" gutters="true"
+      style="width: 90%; height: 500px; border: thin solid black;"
+      liveSplitters="false" id="borderContainer">
+
+    <div dojoType="dijit.layout.ContentPane" region="top"
+        style="padding: 5px; height: 20px;">
+      <b>Chat:</b> <span dojoAttachPoint="chatTitle">${chatName}</span>
+          -- <b>Your Language:</b>
+          <span dojoAttachPoint="chatLanguage">${defaultLanguage}</span>
+    </div>
+
+    <div dojoType="dijit.layout.ContentPane" region="trailing"
+        splitter="true"
+        style="width: 100px; border: thin solid #003F87; padding: 4px;">
+      <div dojoAttachPoint="users"></div>
+    </div>
+
+    <div dojoType="dijit.layout.ContentPane" region="center"
+        style="border: thin solid orange; padding: 10px;">
+      <div dojoAttachPoint="chatContents"></div>
+    </div>
+
+    <div dojoType="dijit.layout.ContentPane" region="bottom"
+        style="padding: 10px; height: 80px;" splitter="false">
+      <textarea dojoAttachPoint="pendingText"
+          style="width: 100%; height: 50px; border: thin solid gray;"></textarea>
+      <div style="margin-top: 3px;">
+      <button dojoAttachPoint="buttonSend">Send</button>
+      <button dojoAttachPoint="buttonTransliteration">Enable Transliteration</button>
+      <div style="float: right" dojoAttachPoint="transControl"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div dojoAttachPoint="searchDialog" dojoType="dijit.Dialog" title="Search Results"
+      style="height: 350px; width: 500px;">
+    <div style="overflow: auto; height: 330px;">
+    <ul dojoAttachPoint="results"></ul>
+    </div>
+  </div>
+  
+  <div style="float: right;" dojoAttachPoint="googleBranding"></div>
+
+</div>

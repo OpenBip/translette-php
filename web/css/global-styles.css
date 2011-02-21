@@ -1,0 +1,216 @@
+@CHARSET "UTF-8";
+
+body {
+  background-color: white;
+  padding: 0px;
+  margin: 0px;
+  font-family: Verdana;
+}
+
+/*
+ * Header
+ */
+ 
+.top-border {
+  background-color: #BCDBF4; /* #034F60 */
+  height: 40px;
+  text-align: center;
+  border-bottom: thin solid #012D37;
+}
+
+.top-border .site-title {
+  position: absolute;
+  font-size: 24pt;
+  font-style: italic;
+  font-family: cursive;
+  font-weight: bolder;
+  color: white;
+  left: 100px;
+  white-space:nowrap;
+}
+
+.top-border .site-title-shadow {
+  position: absolute;
+  font-size: 24pt;
+  font-style: italic;
+  font-family: cursive;
+  font-weight: bolder;
+  color: #2C597E;
+  left: 100px;
+  margin-top: -2px;
+  margin-left: -3px;
+  white-space:nowrap;
+}
+
+#navigation-menu-frame {
+  padding: 1px;
+  background-color: #023967;
+  float: left;
+  margin-top: 5px;
+  margin-left: 5px;
+  border: thin solid black;
+}
+
+#navigation-menu {
+  margin: 0px;
+  background-color: white;
+  float: right;
+  padding: 10px;
+  list-style: none;
+}
+
+#navigation-menu a {
+  text-decoration: none;
+  display: block;
+  width: 140px;
+  height: 20px;
+  text-align: center;
+  color: #2C597E;
+  margin-top: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  background: #eeeeee;
+  border: 1px solid black;
+}
+
+#navigation-menu a:active,
+#navigation-menu a:hover {
+  background: #99ccff;
+}
+
+/*
+ * Page
+ */
+
+div.page-description {
+  position: relative;
+  border-bottom: thin dashed #2C597E;
+  font-size: 10pt;
+  margin-bottom: 10px;
+  margin-left: 180px;
+  padding: 10px;
+  text-align: left;
+}
+
+div.page-message {
+  position: relative;
+  border-bottom: thin dashed #2C597E;
+  font-size: 10pt;
+  margin-top: 10px;
+  margin-left: 180px;
+  color: #2C597E;
+  padding: 10px;
+  text-align: left;
+}
+
+div.page-error {
+  position: relative;
+  border-bottom: thin dashed #830028;
+  font-size: 10pt;
+  margin-top: 10px;
+  margin-left: 180px;
+  color: #EA0047;
+  padding: 10px;
+  text-align: left;
+}
+
+/*
+ * Images
+ */
+
+img.full-image {
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  position: relative;
+  border: 3px solid #023967;
+  padding: 6px;
+  background-color: #BCDBF4;
+}
+
+/*
+ * Editing Portal
+ */
+div.album-edit-form-header {
+  background-color: #2C597E;
+  padding: 5px;
+  border-bottom: thin solid #023967;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+div.album-edit-form-body {
+  padding: 10px;
+  font-size: 10pt;
+  text-align: center;
+}
+ 
+div.album-edit-form {
+  width: 275px;
+  border: 2px solid #023967;
+  margin-top: 10px;
+  margin-left: 10px;
+  float: left;
+  font-size: 12pt;
+  text-align: center;
+}
+            
+/*
+ * Tables
+ */
+ 
+ th {
+  padding: 6px;
+  font-size: large;
+}
+
+td {
+  padding: 4px;
+}
+
+table.list-table {
+  background-color: #2C597E;
+  border: thin solid black;
+  border-spacing: 0px;
+  padding: 1px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Georgia;
+}
+
+td.action-cell {
+  text-align: center;
+  border-left: thin dashed gray;
+}
+
+tr.table-header {
+  color: black;
+  background-color: white; /* #AAAAAA; */
+}
+
+tr.table-header th {
+  padding: 4px 10px 4px 10px;
+  border-bottom: thin solid black;
+}
+
+tr.table-row-on {
+  background-color: white;
+}
+
+tr.table-row-off {
+  background-color: #FFFAC1;
+}
+
+
+tr.form-row td {
+  border-top: thin solid gray;
+  background-color: white;
+}
+
+th.form-label {
+  text-align: right;
+  font-family: Verdana;
+  font-size: 10pt;
+}
