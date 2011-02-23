@@ -1,0 +1,12 @@
+# The absolute path to your site's root directory
+site.filepath = /opt/local/apache2/htdocs/EECS485
+
+database.table.prefix = pa#_
+
+database.username =
+database.password =
+database.host =
+database.name =
+final.database.name =
+
+mysql.driver.location =

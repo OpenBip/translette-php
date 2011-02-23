@@ -28,7 +28,7 @@ if (SessionManager::isUserLoggedIn()) {
         parseOnLoad: true,
         isDebug: true,
         baseUrl: "./",
-        modulePaths: { lemast: "javascript/lemast" }
+        modulePaths: { translette: "javascript/translette" }
     };
   </script>
   <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.4/dojo/dojo.xd.js"

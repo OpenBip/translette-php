@@ -29,4 +29,4 @@ class SiteConfiguration {
 }
 
 $lemast_config = new SiteConfiguration(dirname(__FILE__)
-    . "/../../../../../siteconf/final-configuration.xml");
+    . "/translette-configuration.xml");

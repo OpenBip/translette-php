@@ -1,4 +1,4 @@
-dojo.provide("lemast.ChatClient");
+dojo.provide("translette.ChatClient");
 
 dojo.require("dijit._Widget");
 dojo.require("dijit._Templated");
@@ -6,9 +6,9 @@ dojo.require("dijit._Templated");
 dojo.require("dojox.data.GoogleSearchStore");
 dojo.require("dijit.Dialog");
 
-dojo.require("lemast.language");
+dojo.require("translette.language");
 
-dojo.declare("lemast.ChatClient",
+dojo.declare("translette.ChatClient",
     [ dijit._Widget, dijit._Templated ],
     
 {
@@ -127,7 +127,7 @@ dojo.declare("lemast.ChatClient",
   },
   
   detectLanguage: function() {
-    lemast.language.detectLanguage( this.pendingText.value,
+    translette.language.detectLanguage( this.pendingText.value,
         this.setLanguage );
   },
   
@@ -261,7 +261,7 @@ dojo.declare("lemast.ChatClient",
     }
   },
   
-  templatePath: dojo.moduleUrl("lemast", "templates/ChatClient.html"),
+  templatePath: dojo.moduleUrl("translette", "templates/ChatClient.html"),
   widgetsInTemplate: true
 
 });

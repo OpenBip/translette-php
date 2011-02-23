@@ -20,7 +20,7 @@ $chats = Chats::getChats(SessionManager::getLoggedInUser());
   dojo.require("dijit.layout.BorderContainer");
   dojo.require("dijit.layout.ContentPane");
 
-  dojo.require("lemast.ChatClient");
+  dojo.require("translette.ChatClient");
 </script>
 
 <div style="padding: 20px;">

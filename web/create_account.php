@@ -31,16 +31,16 @@ label {
     enctype="multipart/form-data">
     
   <script type="text/javascript">
-    dojo.require("lemast.language");
+    dojo.require("translette.language");
     
     dojo.addOnLoad(function() {
       var select = dojo.byId("language");
       
-      for (var i in lemast.languages) {
+      for (var i in translette.languages) {
         var option = document.createElement("option");
         
         option.value = i;
-        option.innerHTML = lemast.languages[i];
+        option.innerHTML = translette.languages[i];
         if (i == "en") option.selected = true;
         
         select.appendChild(option);

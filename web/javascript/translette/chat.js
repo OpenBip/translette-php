@@ -1,6 +1,6 @@
-dojo.provide("lemast.chat");
+dojo.provide("translette.chat");
 
-lemast.chat.retrieveMessagesFromServer = function() {
+translette.chat.retrieveMessagesFromServer = function() {
   console.debug("Requesting new messages");
   dojo.xhrGet({
 
@@ -18,7 +18,7 @@ lemast.chat.retrieveMessagesFromServer = function() {
       var i = 0;
       for (i = 0; i < response.length; ++i) {
         var message = response[i];
-        lemast.chat.appendMessageToChat(message.username, message.time,
+        translette.chat.appendMessageToChat(message.username, message.time,
             message.language, message.message);
       }
 
@@ -30,7 +30,7 @@ lemast.chat.retrieveMessagesFromServer = function() {
   });
 };
 
-lemast.chat.appendMessageToChat = function(username, time, language, message) {
+translette.chat.appendMessageToChat = function(username, time, language, message) {
   var messageNode = document.createElement("div");
 
   var usernameNode = document.createElement("font");

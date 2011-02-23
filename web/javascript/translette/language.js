@@ -1,4 +1,4 @@
-dojo.provide("lemast.language");
+dojo.provide("translette.language");
 
 /**
  * Determines the language of the provided source text and sends it to the
@@ -7,7 +7,7 @@ dojo.provide("lemast.language");
  * @param sourceText
  * @param callback
  */
-lemast.language.detectLanguage = function(sourceText, callback) {
+translette.language.detectLanguage = function(sourceText, callback) {
   google.language.detect(sourceText, function(result) {
     if (! result.error) {
       var language = "unknown";
@@ -26,13 +26,13 @@ lemast.language.detectLanguage = function(sourceText, callback) {
 /**
  * 
  */
-lemast.language.translateToEnglish = function() {
+translette.language.translateToEnglish = function() {
   google.language.detect(text, function(result) {
     
   });
 };
 
-lemast.languages = {
+translette.languages = {
     'af' : 'AFRIKAANS',
     'sq' : 'ALBANIAN',
     'am' : 'AMHARIC',

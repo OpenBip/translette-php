@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+
+     Translette Build File
+        Used to copy/remove files between your source code diectory (e.g.
+        from within Eclipse) into your development environment (e.g. a
+        locally running Apache directory).
+        
+        We can extend this later to populate/remove/etc. a locally running
+        MySQL database
+        
+      REQUIRES: build/build.properties - Which should /not/ be
+        source-controlled.  Copy build/build.properties_template to
+        build/build.properties and modify from there.
+
+     ====================================================================== -->
+<project name="Translette" default="Deploy project to local server" basedir="..">
+  <property file="build/build.properties" />
+	
+  <!-- ================================= 
+        target: Copy over files              
+       ================================= -->
+  <target name="Deploy project to local server"
+      description="Copies the html directory to your local dev-site directory">
+    <copy todir="${site.filepath}" >
+      <fileset dir="html">
+      	<exclude name=".svn" />
+      </fileset>
+    </copy>
+    <copydir dest="${site.filepath}/../siteconf" src="siteconf" />
+  </target>
+	
+	<!-- ================================= 
+          target: Rebuild Database          
+       ================================= -->
+  <target name="Rebuild Database"
+      description="Drops the database tables">
+    <path id="mysql">
+      <pathelement location="${mysql.driver.location}" />
+    </path>
+
+    <property name="database.url" value="jdbc:mysql://${database.host}/${final.database.name}" />
+    <sql driver="com.mysql.jdbc.Driver"
+        classpathref="mysql"
+        src="build/sql/final.sql"
+        password="${database.password}"
+        url="${database.url}" userid="${database.username}"></sql>
+  </target>
+  
+  <!-- ================================= 
+        target: Remove files          
+       ================================= -->
+  <target name="Remove files"
+      description="Removes files in the deployment directory">
+    <delete includeemptydirs="true">
+      <fileset dir="${site.filepath}" includes="**/*"/>
+    </delete>
+  </target>
+	
+	<!-- ================================= 
+          target: Generate New SQL Files
+       ================================= -->
+  <target name="ZZZ PA: Generate New SQL Files">
+    <copy tofile="build/sql/tables.sql">
+      <fileset file="build/sql/tables.sql_template" />
+      <filterset>
+        <filter token="project_prefix" value="${database.table.prefix}" />
+      </filterset>
+    </copy>
+  </target>
+	
+	<!-- ================================= 
+	        target: Rebuild Database          
+       ================================= -->
+  <target name="ZZZ PA: Rebuild Database"
+      description="Drops the database tables">
+  	<path id="mysql">
+  		<pathelement location="${mysql.driver.location}" />
+    </path>
+
+    <property name="database.url" value="jdbc:mysql://${database.host}/${database.name}" />
+    <sql driver="com.mysql.jdbc.Driver"
+    	classpathref="mysql"
+    	src="build/sql/tables.sql"
+  	  password="${database.password}"
+    	url="${database.url}" userid="${database.username}"></sql>
+  </target>
+</project>
